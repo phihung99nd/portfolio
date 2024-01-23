@@ -13,6 +13,7 @@ import App from './App.vue'
 import router from './router'
 
 // UI helper packages
+// @ts-ignore
 import VueKinesis from "vue-kinesis";
 
 const vuetify = createVuetify({
