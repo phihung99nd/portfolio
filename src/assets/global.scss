@@ -1,0 +1,30 @@
+$main-white: #ffffff;
+$secondary-white: #f6f6f6;
+$gray: #a6a6a6;
+$main-dark: #010101;
+$secondary-dark: #5b5b5b;
+$accent: #3a2aef;
+
+$max-font-size: 50;
+
+.w-screen {
+  width: 100vw;
+}
+
+@for $i from 8 through $max-font-size {
+  .fs-#{$i} {
+    font-size: $i + 0px;
+  }
+}
+
+@for $i from 1 through 9 {
+  .fw-#{$i} {
+    font-weight: calc($i * 100);
+  }
+}
+
+@for $i from 0 through 5 {
+  .br-#{$i} {
+    border-radius: calc($i * 4) + 0px;
+  }
+}

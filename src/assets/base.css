@@ -36,6 +36,16 @@
   --section-gap: 160px;
 }
 
+/* responsive font size */
+:root {
+  --fs-xl: clamp(2rem, 1rem + 5vw, 3.5rem);
+  --fs-l: clamp(1rem, 0.8rem + 5vw, 3rem);
+  --fs-700: clamp(1.375rem,1.125rem + 2vw,1.5rem);
+  --fs-600: clamp(1.25rem,1rem + 2vw,1.375rem);
+  --fs-500: clamp(1.125rem,0.875rem + 2vw,1.125rem);
+  --fs-400: clamp(1rem,0.75rem + 1vw,1.075rem);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --color-background: var(--vt-c-black);
@@ -65,7 +75,7 @@ body {
   transition:
     color 0.5s,
     background-color 0.5s;
-  line-height: 1.6;
+  line-height: normal;
   font-family:
     Inter,
     -apple-system,
@@ -79,8 +89,26 @@ body {
     'Droid Sans',
     'Helvetica Neue',
     sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body::-webkit-scrollbar{
+  width: 3px;
+}
+
+body::-webkit-scrollbar-track{
+  background-color: #fafafa;
+}
+
+body::-webkit-scrollbar-thumb{
+  background-image: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(1,1,1,1) 50%, rgba(255,255,255,1) 100%);
+  border-radius: 50px;
+}
+
+a.a-reset {
+  color: inherit!important; /* blue colors for links too */
+  text-decoration: inherit!important; /* no underline */
 }
