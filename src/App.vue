@@ -5,7 +5,7 @@ import AppFooter from "@/layouts/AppFooter.vue";
 
 <template>
   <v-app>
-    <Navbar style="z-index: 1;"/>
+    <Navbar style="z-index: 100;"/>
     <div style="height: 80px"/>
     <v-main>
       <RouterView/>
