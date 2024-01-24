@@ -13,11 +13,11 @@ const {mdAndDown} = useDisplay()
 </script>
 
 <template>
-  <div class="w-screen home-about">
+  <div class="w-screen home-about" id="about">
     <kinesis-container event="scroll" class="background background-right">
       <kinesis-element
           type="translate"
-          :strength="200"
+          :strength="500"
           :originY="0"
       >
         <div class="ring"/>
@@ -26,7 +26,7 @@ const {mdAndDown} = useDisplay()
     <kinesis-container event="scroll" class="background background-left">
       <kinesis-element
           type="translate"
-          :strength="250"
+          :strength="700"
           :originY="-100"
       >
         <div class="ring"/>
@@ -133,12 +133,14 @@ const {mdAndDown} = useDisplay()
   border-radius: 50%;
   background: $gray;
   mask: radial-gradient(transparent 40px, #000 0px);
+  -webkit-mask: radial-gradient(transparent 40px, #000 0px);
 
   &.back {
     position: absolute;
     top: -20px;
     left: -50px;
     mask: radial-gradient(transparent 0px, #000 0px);
+    -webkit-mask: radial-gradient(transparent 0px, #000 0px);
   }
 
   &.top {
@@ -158,6 +160,7 @@ const {mdAndDown} = useDisplay()
       height: 300px;
       background: $main-white;
       mask: radial-gradient(transparent 135px, #000 0px);
+      -webkit-mask: radial-gradient(transparent 135px, #000 0px);
     }
   }
 
@@ -168,6 +171,7 @@ const {mdAndDown} = useDisplay()
       height: 300px;
       background: $main-white;
       mask: radial-gradient(transparent 135px, #000 0px);
+      -webkit-mask: radial-gradient(transparent 135px, #000 0px);
     }
   }
 }

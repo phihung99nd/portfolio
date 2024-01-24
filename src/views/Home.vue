@@ -2,6 +2,7 @@
 import {useDisplay} from "vuetify";
 import HomeHero from "@/components/Home/Hero.vue";
 import HomeAbout from "@/components/Home/About.vue";
+import HomeTechSlide from "@/components/Home/TechSlide.vue";
 
 const {mdAndDown} = useDisplay()
 
@@ -12,6 +13,7 @@ const {mdAndDown} = useDisplay()
   <div class="d-flex flex-column">
     <HomeHero/>
     <HomeAbout/>
+    <HomeTechSlide/>
   </div>
 </div>
 </template>

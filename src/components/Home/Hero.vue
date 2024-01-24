@@ -13,7 +13,7 @@ const {mdAndDown} = useDisplay()
 </script>
 
 <template>
-  <div class="home-hero">
+  <div class="home-hero" id="hero">
     <div class="d-flex flex-column home-hero-wrapper" :class="{mdAndDown}">
       <v-row>
         <v-col cols="12" sm="6" class="fs-48 fw-6 title">
