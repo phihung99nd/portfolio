@@ -14,7 +14,6 @@ defineProps(['to'])
   border-radius: 12px;
   border: 1px solid transparent;
   line-height: 19px;
-  cursor: pointer;
   transition: all 0.3s ease;
 
   &:hover, &.router-active {

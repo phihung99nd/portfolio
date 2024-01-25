@@ -34,7 +34,7 @@ const skillList = ref([
         <div class="slide-track">
           <template v-for="i in 2" :key="i">
             <template v-for="(item, index) in skillList" :key="index">
-              <div class="slide">
+              <div class="slide cursor-trigger">
                 <a class="a-reset" :href="item.to">
                   <img :src="item.src" alt=""/>
                 </a>

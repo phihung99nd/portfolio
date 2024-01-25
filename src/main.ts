@@ -15,6 +15,8 @@ import router from './router'
 // UI helper packages
 // @ts-ignore
 import VueKinesis from "vue-kinesis";
+// @ts-ignore
+import VueWriter from "vue-writer";
 
 const vuetify = createVuetify({
     components,
@@ -32,5 +34,6 @@ app.use(vuetify)
 app.use(createPinia())
 app.use(router)
 app.use(VueKinesis);
+app.use(VueWriter)
 
 app.mount('#app')

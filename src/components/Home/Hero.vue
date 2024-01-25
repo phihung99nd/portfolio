@@ -13,11 +13,17 @@ const {mdAndDown} = useDisplay()
 </script>
 
 <template>
-  <div class="home-hero" id="hero">
+  <div class="w-screen home-hero" id="hero">
     <div class="d-flex flex-column home-hero-wrapper" :class="{mdAndDown}">
       <v-row>
         <v-col cols="12" sm="6" class="fs-48 fw-6 title">
-          I AM A FRONT END VUE DEVELOPER WITH 2+ YEARS OF EXPERIENCE.
+          <div>
+            I AM A FRONT END VUE DEVELOPER WITH 2+ YEARS OF EXPERIENCE.
+          </div>
+          <div class="mask">
+            <VueWriter :array="['I AM A FRONT END VUE DEVELOPER WITH 2+ YEARS OF EXPERIENCE.']" :iterations="1"
+                       :type-speed="25" caret="cursor"/>
+          </div>
         </v-col>
         <v-col cols="12" sm="6" class="d-flex flex-column justify-end align-end ga-2">
           <div class="fs-14 fw-4 subtitle">
@@ -25,7 +31,7 @@ const {mdAndDown} = useDisplay()
             I specialize in front end development and enjoy exploring variety of UI styles.
             Check out my work and feel free to contact me for work.
           </div>
-          <div class="d-flex ga-2">
+          <div class="d-flex ga-2 cursor-trigger">
             <button class="cta">
               Download CV
             </button>
@@ -55,6 +61,14 @@ const {mdAndDown} = useDisplay()
 
     .title {
       font-size: var(--fs-l);
+      position: relative;
+      color: transparent;
+
+      .mask {
+        color: $main-dark;
+        position: absolute;
+        top: 12px;
+      }
     }
 
     .subtitle {
@@ -67,7 +81,6 @@ const {mdAndDown} = useDisplay()
       border-radius: 12px;
       line-height: 19px;
       border: 1px solid $main-dark;
-      cursor: pointer;
       transition: all 0.3s ease;
 
       &:hover, &.router-active {
@@ -80,6 +93,32 @@ const {mdAndDown} = useDisplay()
     .parallax {
       width: 100%;
       aspect-ratio: 2;
+    }
+  }
+}
+
+:deep() {
+  .is-typed span.cursor {
+    display: inline-block;
+    width: 3px;
+    background-color: black;
+    animation: blink 1s forwards;
+    animation-iteration-count: 5;
+  }
+
+  .is-typed span.cursor.typing {
+    animation: none;
+  }
+
+  @keyframes blink {
+    49% {
+      background-color: black;
+    }
+    50% {
+      background-color: transparent;
+    }
+    100% {
+      background-color: transparent;
     }
   }
 }

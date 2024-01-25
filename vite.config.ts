@@ -11,6 +11,9 @@ export default defineConfig({
   build: {
     sourcemap: true
   },
+  server: {
+    port: 1799
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

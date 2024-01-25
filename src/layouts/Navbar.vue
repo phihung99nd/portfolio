@@ -31,9 +31,12 @@ watch(drawer, (val) => {
 <template>
   <div class="navbar w-screen">
     <div class="navbar-wrapper" :class="{mdAndDown}">
-      <RouterLink :to="{ name: 'home' }" class="fs-24 fw-4 a-reset app-title">PHI HUNG TRAN</RouterLink>
+      <RouterLink :to="{ name: 'home' }" class="fs-24 fw-4 a-reset app-title">
+        <VueWriter :array="['PHI HUNG TRAN']" :iterations="1"
+                   :type-speed="25"/>
+      </RouterLink>
       <div class="d-none d-md-flex align-center ga-2">
-        <NavbarButton v-for="(item, index) in navList" :key="index" :to="{name: item.to}">
+        <NavbarButton class="cursor-trigger" v-for="(item, index) in navList" :key="index" :to="{name: item.to}">
           {{ item.title }}
         </NavbarButton>
       </div>
@@ -95,7 +98,6 @@ watch(drawer, (val) => {
 
   .overlay-nav-btn {
     margin-bottom: 20px;
-    cursor: pointer;
     overflow: clip;
 
     .title {

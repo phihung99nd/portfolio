@@ -36,7 +36,7 @@ const {mdAndDown} = useDisplay()
       <kinesis-container class="avatar">
         <kinesis-element
             type="depth"
-            :strength="20"
+            :strength="25"
         >
           <div class="ring back"/>
         </kinesis-element>
@@ -54,7 +54,7 @@ const {mdAndDown} = useDisplay()
         </kinesis-element>
         <kinesis-element
             type="depth"
-            :strength="20"
+            :strength="25"
         >
           <div class="ring top"/>
         </kinesis-element>
