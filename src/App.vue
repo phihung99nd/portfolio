@@ -6,7 +6,7 @@ import {onMounted} from "vue";
 onMounted(() => {
   const elPointer  = document.querySelector("#custom-cursor");
 
-  addEventListener("mousemove", (evt) => {
+  window.addEventListener("mousemove", (evt) => {
     elPointer.style.cssText = `
     left: ${evt.clientX}px;
     top:  ${evt.clientY}px;
