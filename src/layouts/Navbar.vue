@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {useDisplay} from "vuetify";
-import {ref, watch} from "vue";
+import {onMounted, ref, watch} from "vue";
 import NavbarButton from "@/layouts/NavbarButton.vue";
 
 const {mdAndDown} = useDisplay()
@@ -14,6 +14,7 @@ const navList = ref([
 ])
 const drawer = ref(false)
 const animate = ref(false)
+const scroll = ref(0)
 
 watch(drawer, (val) => {
   if (val) {
@@ -26,10 +27,16 @@ watch(drawer, (val) => {
     }, 300)
   }
 })
+
+onMounted(() => {
+  window.addEventListener("scroll", () => {
+    scroll.value = document.documentElement.scrollTop;
+  });
+})
 </script>
 
 <template>
-  <div class="navbar w-screen">
+  <div class="navbar w-screen" :class="{'not-top': scroll > 0}">
     <div class="navbar-wrapper" :class="{mdAndDown}">
       <RouterLink :to="{ name: 'home' }" class="fs-24 fw-4 a-reset app-title">
         <VueWriter :array="['PHI HUNG TRAN']" :iterations="1"
@@ -53,10 +60,10 @@ watch(drawer, (val) => {
                   v-for="(item, index) in navList" :key="index"
                   @click.stop="drawer = false"
       >
-        <div class="fs-24 fw-6 title" :class="{animate}">{{ item.title }}</div>
+        <div class="fs-24 fw-6 title cursor-trigger" :class="{animate}">{{ item.title }}</div>
         <div class="underline"/>
       </RouterLink>
-      <div class="close">
+      <div class="close cursor-trigger">
         <v-btn icon="mdi-close" variant="plain" color="white" @click.stop="drawer = false"></v-btn>
       </div>
     </v-overlay>
@@ -66,11 +73,20 @@ watch(drawer, (val) => {
 <style scoped lang="scss">
 .navbar {
   height: 70px;
-  background: $main-white;
+  border-bottom: 1px solid transparent;
+  backdrop-filter: blur(10px);
   position: fixed;
   top: 0;
   left: 0;
   color: $main-dark;
+  transition-property: background, border-bottom;
+  transition-duration: .3s;
+  transition-timing-function: ease;
+
+  &.not-top {
+    background: $main-white;
+    border-bottom: 1px solid $gray;
+  }
 
   .navbar-wrapper {
     width: 100%;

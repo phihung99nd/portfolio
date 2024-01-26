@@ -56,7 +56,7 @@ function linkTo(url) {
             {{ lib.name }}
           </div>
         </div>
-        <div class="d-flex ga-2 justify-center align-center action">
+        <div class="d-flex ga-2 justify-center align-center flex-wrap action">
           <div class="fs-16 fw-6 cursor-trigger" v-for="action in item.action" :key="action.key" @click.stop="linkTo(action.link)">
             {{ action.key }}
             <v-icon :icon="action.icon"/>

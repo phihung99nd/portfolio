@@ -28,13 +28,13 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
-.app {
+* {
   #custom-cursor {
     position: fixed;
     translate: -50% -50%;
     left: 0;
     top: 0;
-    z-index: 1000;
+    z-index: 2001; // bigger than v-overlay
     pointer-events: none;
     width: 20px;
     height: 20px;
@@ -56,6 +56,12 @@ onMounted(() => {
       animation-direction: alternate;
       animation-iteration-count: infinite;
       animation-play-state: running;
+    }
+  }
+
+  &:has(.overlay) {
+    #custom-cursor {
+      background-color: rgba($secondary-white, 0.5)!important;
     }
   }
 
