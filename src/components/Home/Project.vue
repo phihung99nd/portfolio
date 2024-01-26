@@ -71,6 +71,7 @@ const projectList = ref([
 .home-project {
   color: $main-dark;
   padding: 20px 0;
+  margin-bottom: 60px;
 
   .home-project-wrapper {
     width: 100%;

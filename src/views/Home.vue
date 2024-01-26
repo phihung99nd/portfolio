@@ -4,6 +4,7 @@ import HomeHero from "@/components/Home/Hero.vue";
 import HomeAbout from "@/components/Home/About.vue";
 import HomeTechSlide from "@/components/Home/TechSlide.vue";
 import HomeProject from "@/components/Home/Project.vue";
+import HomeContact from "../components/Home/Contact.vue";
 
 const {mdAndDown} = useDisplay()
 
@@ -16,6 +17,7 @@ const {mdAndDown} = useDisplay()
     <HomeAbout/>
     <HomeTechSlide/>
     <HomeProject/>
+    <HomeContact/>
   </div>
 </div>
 </template>

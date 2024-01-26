@@ -1,12 +1,17 @@
 <script setup lang="ts">
 import Navbar from "@/layouts/Navbar.vue";
 import AppFooter from "@/layouts/AppFooter.vue";
-import {onMounted} from "vue";
+import {computed, onMounted, onUpdated, ref} from "vue";
+
+const touchPoint = ref(0)
 
 onMounted(() => {
+  touchPoint.value = navigator.maxTouchPoints
+  if(touchPoint.value > 0) return
   const elPointer  = document.querySelector("#custom-cursor");
 
   window.addEventListener("mousemove", (evt) => {
+    evt.stopPropagation()
     elPointer.style.cssText = `
     left: ${evt.clientX}px;
     top:  ${evt.clientY}px;
@@ -23,12 +28,14 @@ onMounted(() => {
       <RouterView/>
     </v-main>
     <AppFooter/>
-    <div id="custom-cursor"/>
+    <div id="custom-cursor" v-if="touchPoint == 0"/>
   </v-app>
 </template>
 
 <style lang="scss">
 * {
+  cursor: none!important;
+
   #custom-cursor {
     position: fixed;
     translate: -50% -50%;

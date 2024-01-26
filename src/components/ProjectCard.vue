@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import {onMounted, ref} from "vue";
+import { useLink } from "../composables";
 
 defineProps(['item', 'reverse'])
 
@@ -30,11 +31,6 @@ onMounted(() => {
 // Start observing the element
   observer.observe(projectCard.value);
 })
-
-function linkTo(url) {
-  window.open(url, '_blank')
-}
-
 </script>
 
 <template>
@@ -52,12 +48,12 @@ function linkTo(url) {
           {{ item.description }}
         </div>
         <div class="d-flex ga-2 justify-center align-center library">
-          <div class="fs-14" v-for="lib in item.lib" :key="lib.name" @click.stop="linkTo(lib.link)">
+          <div class="fs-14" v-for="lib in item.lib" :key="lib.name" @click.stop="useLink(lib.link)">
             {{ lib.name }}
           </div>
         </div>
         <div class="d-flex ga-2 justify-center align-center flex-wrap action">
-          <div class="fs-16 fw-6 cursor-trigger" v-for="action in item.action" :key="action.key" @click.stop="linkTo(action.link)">
+          <div class="fs-16 fw-6 cursor-trigger" v-for="action in item.action" :key="action.key" @click.stop="useLink(action.link)">
             {{ action.key }}
             <v-icon :icon="action.icon"/>
           </div>

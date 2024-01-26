@@ -19,27 +19,40 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
+      meta: {
+        title: 'Home'
+      }
     },
     {
       path: '/about',
       name: 'about',
-      component: About
+      component: About,
+      meta: {
+        title: 'About'
+      }
     },
     {
       path: '/projects',
       name: 'projects',
-      component: Projects
+      component: Projects,
+      meta: {
+        title: 'Projects'
+      }
     },
     {
       path: '/contact',
       name: 'contact',
-      component: Contact
+      component: Contact,
+      meta: {
+        title: 'Contact'
+      }
     },
   ]
 })
 
 router.beforeEach((to, from, next) => {
+  window.document.title = to?.meta?.title ? 'Portfolio - '+to.meta.title : 'Portfolio'
   next()
 })
 

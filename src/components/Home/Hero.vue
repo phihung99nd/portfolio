@@ -35,9 +35,9 @@ const {mdAndDown} = useDisplay()
             <button class="cta">
               Download CV
             </button>
-            <button class="cta">
-              Contact
-            </button>
+<!--            <button class="cta">-->
+<!--              Contact-->
+<!--            </button>-->
           </div>
         </v-col>
       </v-row>
