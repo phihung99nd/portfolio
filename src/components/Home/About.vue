@@ -7,8 +7,10 @@ export default {
 <script setup lang="ts">
 import avatarImg from '@/assets/images/avatar.jpg'
 import {useDisplay} from "vuetify";
+import {useRouter} from "vue-router";
 
 const {mdAndDown} = useDisplay()
+const router = useRouter()
 
 </script>
 
@@ -27,7 +29,7 @@ const {mdAndDown} = useDisplay()
       <kinesis-element
           type="translate"
           :strength="700"
-          :originY="-100"
+          :originY="0"
       >
         <div class="ring"/>
       </kinesis-element>
@@ -50,6 +52,7 @@ const {mdAndDown} = useDisplay()
               cover
               class="br-4"
               :src="avatarImg"
+              v-view-transition-name="'avatar'"
           />
         </kinesis-element>
         <kinesis-element
@@ -60,7 +63,7 @@ const {mdAndDown} = useDisplay()
         </kinesis-element>
       </kinesis-container>
       <div class="d-flex flex-column ga-5 description">
-        <div class="title fs-20 fw-7">ABOUT ME</div>
+        <div class="title fs-20 fw-7" v-view-transition-name="'about-title'">ABOUT ME</div>
         <div class="subtitle fs-18 fw-5">
           A junior front end developer <br/>
           graduated from Hanoi University of Science and Technology</div>
@@ -70,6 +73,8 @@ const {mdAndDown} = useDisplay()
           and I learned useful skills that support my passion.
           Having studied and worked on real projects for over two years,
           I have developed a strong understanding of HTML, CSS, Javascript, Vue, SCSS, and most recently, Nuxt.
+
+          <div class="more-btn"><span class="cursor-trigger" @click="router.push({name: 'about'})"> More >></span></div>
         </div>
       </div>
     </div>
@@ -122,6 +127,13 @@ const {mdAndDown} = useDisplay()
       .content {
         color: $secondary-dark;
         max-width: 600px;
+
+        .more-btn {
+          margin-top: 20px;
+          > span:hover {
+            color: $accent;
+          }
+        }
       }
     }
   }

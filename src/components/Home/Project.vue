@@ -55,7 +55,10 @@ const projectList = ref([
         <div class="title fs-20 fw-7">PROJECTS</div>
         <div class="subtitle fs-18 fw-5">Feel free to check out my works</div>
       </div>
-      <div class="d-flex flex-column ga-7 w-100 project-list">
+      <div class="d-flex flex-column ga-7 w-100 align-center project-list">
+        <div class="more-btn br-3">
+          <span class="cursor-trigger">More >></span>
+        </div>
         <ProjectCard
             v-for="(item, index) in projectList"
             :key="item"
@@ -86,6 +89,15 @@ const projectList = ref([
     .header {
       .title {
         color: $accent;
+      }
+    }
+
+    .project-list {
+      .more-btn {
+        align-self: end;
+        > span:hover {
+          color: $accent;
+        }
       }
     }
   }

@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { startViewTransition } from 'vue-view-transitions'
 
 const Home = () => import('@/views/Home.vue')
 const About = () => import('@/views/About.vue')
@@ -13,6 +14,8 @@ const router = createRouter({
         el: to.hash,
         behavior: 'smooth'
       }
+    } else {
+      return { top: 0 }
     }
   },
   routes: [
@@ -56,4 +59,11 @@ router.beforeEach((to, from, next) => {
   next()
 })
 
+router.beforeResolve(async () => {
+  const viewTransition = startViewTransition(async () => {
+    // dom changes
+  })
+  await viewTransition.captured
+  // ...
+})
 export default router

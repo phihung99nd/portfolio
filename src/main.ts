@@ -17,6 +17,7 @@ import router from './router'
 import VueKinesis from "vue-kinesis";
 // @ts-ignore
 import VueWriter from "vue-writer";
+import { ViewTransitionsPlugin } from 'vue-view-transitions'
 
 const vuetify = createVuetify({
     components,
@@ -34,6 +35,7 @@ app.use(vuetify)
 app.use(createPinia())
 app.use(router)
 app.use(VueKinesis);
-app.use(VueWriter)
+app.use(VueWriter);
+app.use(ViewTransitionsPlugin())
 
 app.mount('#app')

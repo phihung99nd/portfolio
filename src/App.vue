@@ -5,7 +5,7 @@ import {computed, onMounted, onUpdated, ref} from "vue";
 
 const touchPoint = ref(0)
 
-onMounted(() => {
+onMounted(async () => {
   touchPoint.value = navigator.maxTouchPoints
   if(touchPoint.value > 0) return
   const elPointer  = document.querySelector("#custom-cursor");

@@ -42,6 +42,8 @@ const {mdAndDown} = useDisplay()
         </v-col>
       </v-row>
       <v-parallax :src="heroImg" class="br-4 parallax" :scale="mdAndDown ? 0.8 : 0.5"/>
+      <div style="display: none">Photo by <a href="https://unsplash.com/@cgower?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Christopher Gower</a> on <a href="https://unsplash.com/photos/a-macbook-with-lines-of-code-on-its-screen-on-a-busy-desk-m_HRfLhgABo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></div>
+
     </div>
   </div>
 </template>
