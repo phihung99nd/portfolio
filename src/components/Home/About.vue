@@ -98,7 +98,7 @@ const router = useRouter()
     z-index: 1;
 
     &.mdAndDown {
-      padding: 60px 60px;
+      padding: 60px 10px;
       flex-direction: column;
       justify-content: center;
       height: fit-content;

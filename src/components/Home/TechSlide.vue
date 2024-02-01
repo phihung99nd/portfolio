@@ -62,7 +62,7 @@ const skillList = ref([
     max-width: 1200px;
 
     &.mdAndDown {
-      padding: 0 60px;
+      padding: 0 10px;
     }
 
     // Infinity slide

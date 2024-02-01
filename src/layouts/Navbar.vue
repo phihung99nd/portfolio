@@ -38,7 +38,7 @@ onMounted(() => {
 <template>
   <div class="navbar w-screen" :class="{'not-top': scroll > 0}">
     <div class="navbar-wrapper" :class="{mdAndDown}">
-      <RouterLink :to="{ name: 'home' }" class="fs-24 fw-4 a-reset app-title">
+      <RouterLink :to="{ name: 'home' }" class="fs-24 fw-4 a-reset app-title cursor-trigger">
         <VueWriter :array="['PHI HUNG TRAN']" :iterations="1"
                    :type-speed="25"/>
       </RouterLink>
@@ -105,7 +105,7 @@ onMounted(() => {
     }
 
     &.mdAndDown {
-      padding: 0 60px;
+      padding: 0 10px;
     }
   }
 }

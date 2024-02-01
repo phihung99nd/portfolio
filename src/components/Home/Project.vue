@@ -83,7 +83,7 @@ const projectList = ref([
     margin: auto;
 
     &.mdAndDown {
-      padding: 0 60px;
+      padding: 0 10px;
     }
 
     .header {

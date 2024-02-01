@@ -38,4 +38,4 @@ app.use(VueKinesis);
 app.use(VueWriter);
 app.use(ViewTransitionsPlugin())
 
-app.mount('#app')
+app.mount('body')

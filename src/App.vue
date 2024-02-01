@@ -7,8 +7,8 @@ const touchPoint = ref(0)
 
 onMounted(async () => {
   touchPoint.value = navigator.maxTouchPoints
-  if(touchPoint.value > 0) return
-  const elPointer  = document.querySelector("#custom-cursor");
+  if (touchPoint.value > 0) return
+  const elPointer = document.querySelector("#custom-cursor");
 
   window.addEventListener("mousemove", (evt) => {
     evt.stopPropagation()
@@ -21,7 +21,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <v-app class="app">
+  <v-app class="app w-screen">
     <Navbar style="z-index: 100;"/>
     <div style="height: 80px"/>
     <v-main>
@@ -34,7 +34,7 @@ onMounted(async () => {
 
 <style lang="scss">
 * {
-  cursor: none!important;
+  cursor: none !important;
 
   #custom-cursor {
     position: fixed;
@@ -68,7 +68,7 @@ onMounted(async () => {
 
   &:has(.overlay) {
     #custom-cursor {
-      background-color: rgba($secondary-white, 0.5)!important;
+      background-color: rgba($secondary-white, 0.5) !important;
     }
   }
 

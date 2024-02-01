@@ -108,7 +108,7 @@ const expertiseList = ref([
     padding-bottom: 60px;
 
     &.mdAndDown {
-      padding: 0 60px;
+      padding: 0 10px 60px;
     }
 
     .main-info {
@@ -175,6 +175,7 @@ const expertiseList = ref([
       border-radius: 16px;
       width: 300px;
       height: 400px;
+      box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.15);
 
       > img {
         width: 100%;

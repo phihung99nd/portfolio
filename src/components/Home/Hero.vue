@@ -58,7 +58,7 @@ const {mdAndDown} = useDisplay()
     margin: auto auto 60px;
 
     &.mdAndDown {
-      padding: 0 60px;
+      padding: 0 10px;
     }
 
     .title {
