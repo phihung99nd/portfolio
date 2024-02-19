@@ -128,6 +128,7 @@ async function onSubmit() {
 <style scoped lang="scss">
 .contact-footer {
   padding: 60px 0;
+  border-top: 1px solid $gray;
 
   .contact-footer-wrapper {
     width: 100%;

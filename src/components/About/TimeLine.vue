@@ -5,32 +5,13 @@ export default {
 </script>
 
 <script setup lang="ts">
-import {ref} from "vue";
 import {useDisplay} from "vuetify";
+import {timelineList} from "../../composables";
 
 const {mdAndDown} = useDisplay()
 
 // data
-const timelineList = ref([
-  {
-    time: 'July 2017 - July 2022',
-    place: 'HUST University',
-    program: 'Global ICT Program',
-    description: 'Integer nec risus turpis. Donec sit amet posuere odio, ac porttitor massa. Nam sed ipsum tellus. Aliquam erat volutpat. Nulla facilisi.'
-  },
-  {
-    time: 'June 2021 - September 2021',
-    place: 'MISA JSC',
-    program: 'Fullstack Developer Fresher',
-    description: 'Integer nec risus turpis. Donec sit amet posuere odio, ac porttitor massa. Nam sed ipsum tellus. Aliquam erat volutpat. Nulla facilisi.'
-  },
-  {
-    time: 'January 2022 - January 2024',
-    place: 'MicroTech Company',
-    program: 'Front-end Developer',
-    description: 'Integer nec risus turpis. Donec sit amet posuere odio, ac porttitor massa. Nam sed ipsum tellus. Aliquam erat volutpat. Nulla facilisi.'
-  }
-])
+
 </script>
 
 <template>
@@ -64,7 +45,6 @@ const timelineList = ref([
 <style scoped lang="scss">
 .about-timeline {
   padding-bottom: 60px;
-  border-bottom: 1px solid $gray;
 
   .about-timeline-wrapper {
     width: 100%;

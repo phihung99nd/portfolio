@@ -85,7 +85,6 @@ onMounted(() => {
 
   &.not-top {
     background: $main-white;
-    border-bottom: 1px solid $gray;
   }
 
   .navbar-wrapper {

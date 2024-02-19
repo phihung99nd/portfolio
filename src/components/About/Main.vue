@@ -7,38 +7,12 @@ export default {
 <script setup lang="ts">
 import avatarImg from '@/assets/images/avatar.jpg'
 import {useDisplay} from "vuetify";
-import {ref} from "vue";
+import {expertiseList} from "../../composables";
 
 const {mdAndDown} = useDisplay()
 
 //data
-const expertiseList = ref([
-  {
-    key: 'Languages',
-    skill: [
-      {name: 'HTML', exp: '5 years'},
-      {name: 'CSS', exp: '5 years'},
-      {name: 'Javascript', exp: '5 years'},
-      {name: 'SCSS', exp: '2 years'},
-    ]
-  },
-  {
-    key: 'Frameworks',
-    skill: [
-      {name: 'VueJS', exp: '4 years'},
-      {name: 'NuxtJS', exp: '2 months'},
-    ]
-  },
-  {
-    key: 'Libraries',
-    skill: [
-      {name: 'ViewUI', exp: '2 years'},
-      {name: 'Vuetify', exp: '4 months'},
-      {name: 'ReactJS', exp: '3 months'},
-      {name: 'MinimalUI', exp: '3 months'},
-    ]
-  }
-])
+
 
 </script>
 
